@@ -1,0 +1,30 @@
+/* styles.css */
+.font15 {
+    font-size: 15px;
+  }
+  
+  .extraBold {
+    font-weight: 800;
+  }
+  
+  .whiteColor {
+    color: white;
+  }
+  
+  .blueColor {
+    color: blue;
+  }
+  
+  .font14 {
+    font-size: 14px;
+  }
+  
+  .flexCenter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .no-underline {
+    text-decoration: none;
+  }
+  

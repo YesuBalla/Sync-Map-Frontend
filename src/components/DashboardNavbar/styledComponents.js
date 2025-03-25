@@ -11,6 +11,7 @@ export const NavHeader = styled.nav`
     align-items: center;
     padding: 10px 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 `
 
 export const ActionsContainer = styled.div`

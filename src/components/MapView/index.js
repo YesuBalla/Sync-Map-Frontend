@@ -5,10 +5,10 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-import { Button, Container} from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import ThemeContext from '../../context/ThemeContext';
-import DashboardNavbar from '../DashboardNavbar'
-import Footer from '../Footer'
+import DashboardNavbar from '../DashboardNavbar';
+import Footer from '../Footer';
 
 const customIcon = new L.Icon({
   iconUrl: markerIcon,
@@ -35,16 +35,31 @@ const MapView = () => {
   }, [lat, lng]);
 
   return (
-    <>
+    <div style={{ backgroundColor: isDarkTheme ? 'black' : 'white' }}>
       <DashboardNavbar />
-      <div style={{ backgroundColor: isDarkTheme ? 'black' : 'white', color: isDarkTheme ? 'white' : 'black', minHeight: '100vh', padding: '20px' }}>
+      <div
+        style={{
+          backgroundColor: isDarkTheme ? 'black' : 'white',
+          color: isDarkTheme ? 'white' : 'black',
+          minHeight: '100vh',
+          padding: '20px',
+        }}
+      >
         <Container className="text-center mb-4">
-              <h2>Interactive Map View</h2>
-              <p style={{ color: 'grey' }}>Explore the selected location and navigate through the map effortlessly.</p>
-              <Button variant="primary" onClick={() => navigate('/')}>Go Home</Button>
+          <h2>Interactive Map View</h2>
+          <p style={{ color: 'grey' }}>
+            Explore the selected location and navigate through the map effortlessly.
+          </p>
+          <Button variant="primary" onClick={() => navigate('/')}>
+            Go Home
+          </Button>
         </Container>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <MapContainer center={center} zoom={zoom} style={{ height: '460px', width: '80%', borderRadius: '10px', overflow: 'hidden' }}>
+          <MapContainer
+            center={center}
+            zoom={zoom}
+            style={{ height: '460px', width: '80%', borderRadius: '10px', overflow: 'hidden' }}
+          >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={center} icon={customIcon}>
               <Popup>Selected Location</Popup>
@@ -53,7 +68,7 @@ const MapView = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

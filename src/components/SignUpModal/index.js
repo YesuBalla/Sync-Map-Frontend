@@ -39,7 +39,7 @@ export default function SignUpModal(props) {
 
 
     try {
-      const url = "http://localhost:5000/register";
+      const url = "https://sync-map-backend.onrender.com/register";
       const response = await axios.post(url, signUpData, {
         headers: { "Content-Type": "application/json" },
       });
